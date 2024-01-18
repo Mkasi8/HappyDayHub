@@ -11,25 +11,29 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>{people.length} Birthdays</h1>
-        {people.map(({ id, name, age, image }) => {
-          return (
-            <>
-              <Card
-                key={id}
-                name={name}
-                age={age}
-                image={image}
-                handleClick={handleClick}
-              />
-            </>
-          );
-        })}
-        <button type="button" onClick={handleClick}>
-          Clear All
-        </button>
-      </div>
+      <main>
+        <div className="container">
+          <h3>{people.length} Birthdays</h3>
+          <section>
+            {people.map(({ id, name, age, image }) => {
+              return (
+                <>
+                  <Card
+                    key={id}
+                    name={name}
+                    age={age}
+                    image={image}
+                    handleClick={handleClick}
+                  />
+                </>
+              );
+            })}
+          </section>
+          <button type="button" onClick={handleClick} className="btn btn-block">
+            Clear All
+          </button>
+        </div>
+      </main>
     </>
   );
 }

@@ -1,14 +1,11 @@
-export const Card = (props) => {
-  const { image, name, age, handleClick } = props;
+export const Card = ({ image, name, age, handleClick }) => {
   return (
-    <div>
-      <img
-        src={image}
-        alt={name}
-        style={{ width: "200px", height: "200px", objectFit: "cover" }}
-      />
-      <h2>{name}</h2>
-      <h2>{age} years</h2>
-    </div>
+    <article className="person">
+      <img src={image} alt={name} style={{ objectFit: "cover" }} />
+      <div>
+        <h4>{name}</h4>
+        <p>{age} years</p>
+      </div>
+    </article>
   );
 };
